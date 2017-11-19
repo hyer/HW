@@ -8,26 +8,36 @@
     <link rel="icon" type="image/png" href="img/logo.png">
 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body ng-app="drawApp">
 
+<div>
+    <h1 class="text-center">Mathematical Expression Recognition</h1>
+</div>
+
 <div class="container" ng-controller="DrawCtrl">
 
     <div>
-        <canvas id="canvas" width="800px" height="500px"></canvas>
+        <canvas id="canvas" width="1000px" height="500px"></canvas>
     </div>
 
-    <p>
-        <button ng-click="clear()" class="btn btn-default">Clear</button>
-        <button ng-click="getInvariants()" class="btn btn-success">Recognise</button>
-    </p>
+    <div class="pull-right">
+        <p>
+        <button ng-click="clear()" class="btn btn-warning">Clear</button>
+        <button ng-click="getInvariants()" class="btn btn-success">Send</button>
+        </p>
+    </div>
 
-    <p>
-        <button ng-click="setPlain()" class="btn" ng-class="getClass('PLAIN')">Plain</button>
-        <button ng-click="setRotation()" class="btn" ng-class="getClass('ROTATION')">Rotation</button>
-    </p>
+
+    <!--<p>-->
+        <!--<button ng-click="setPlain()" class="btn" ng-class="getClass('PLAIN')">Plain</button>-->
+        <!--<button ng-click="setRotation()" class="btn" ng-class="getClass('ROTATION')">Rotation</button>-->
+    <!--</p>-->
 
     <!-- <p>
       <button
@@ -39,15 +49,14 @@
       </button>
     </p> -->
 
-    <h3>Recognised:</h3>
-    <div>
-        <p ng-repeat="propability in recognised">
-            <button class="btn btn-primary">{{$index}}</button>
-            -
-            <button class="btn btn-default">{{propability * 100 | number:3}} %</button>
-        </p>
-    </div>
-
+    <!--<h3>Recognised:</h3>-->
+    <!--<div>-->
+        <!--<p ng-repeat="propability in recognised">-->
+            <!--<button class="btn btn-primary">{{$index}}</button>-->
+            <!-- - -->
+            <!--<button class="btn btn-default">{{propability * 100 | number:3}} %</button>-->
+        <!--</p>-->
+    <!--</div>-->
 </div>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>

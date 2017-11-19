@@ -7,7 +7,7 @@ var Recognizer = function (canvas) {
         recognizer.canvas = canvas;
         recognizer.context = canvas.getContext('2d');
 
-        recognizer.context.lineWidth = 5;
+        recognizer.context.lineWidth = 3;
         recognizer.context.lineJoin = recognizer.context.lineCap = 'round';
 
         recognizer.moves = [];
@@ -26,7 +26,6 @@ var Recognizer = function (canvas) {
     }
 
     var redraw = function (e) {
-
         recognizer.context.clearRect(0, 0, recognizer.context.canvas.width, recognizer.context.canvas.height);
 
         for (var m = 0; m < recognizer.moves.length; m++) {
@@ -83,7 +82,7 @@ var Recognizer = function (canvas) {
      */
 
     var isBlack = function (r, g, b, a) {
-        if (r === 0 && g === 0 && b === 0 && a === 255) {
+        if (r === 0 && g === 0 && b === 0 && a === 250) {
             return true;
         }
         else {
@@ -92,7 +91,6 @@ var Recognizer = function (canvas) {
     };
 
     var getBlackPixels = function () {
-
         var blackPixels = 0;
         var totalPixels = recognizer.context.canvas.width * recognizer.context.canvas.height;
 
@@ -145,7 +143,6 @@ var Recognizer = function (canvas) {
     };
 
     var getCenterDistance = function () {
-
         var distances = [];
 
         var imgDate = recognizer.context.getImageData(0, 0, recognizer.context.canvas.width, recognizer.context.canvas.height);
@@ -230,6 +227,10 @@ var Recognizer = function (canvas) {
         var blackPixels = getBlackPixels();
         var pixels = getPixels();
         var centerdistance = getCenterDistance();
+
+        console.log(recognizer.moves);
+        console.log(recognizer.moves.length);
+
         return {
             'strokes': recognizer.moves.length,
             'blackPixels': blackPixels,
