@@ -224,20 +224,20 @@ var Recognizer = function (canvas) {
 
     recognizer.getInvariants = function () {
 
-        var blackPixels = getBlackPixels();
-        var pixels = getPixels();
-        var centerdistance = getCenterDistance();
+        //var blackPixels = getBlackPixels();
+        //var pixels = getPixels();
+        //var centerdistance = getCenterDistance();
 
         console.log(recognizer.moves);
         console.log(recognizer.moves.length);
-
-        return {
-            'strokes': recognizer.moves.length,
-            'blackPixels': blackPixels,
-            'avgDistance': centerdistance.avg,
-            'medianDistance': centerdistance.median,
-            'pixels': pixels
-        }
+        return null;
+        //return {
+        //    'strokes': recognizer.moves.length,
+        //    'blackPixels': blackPixels,
+        //    'avgDistance': centerdistance.avg,
+        //    'medianDistance': centerdistance.median,
+        //    'pixels': pixels
+        //}
     };
 
     return recognizer;
